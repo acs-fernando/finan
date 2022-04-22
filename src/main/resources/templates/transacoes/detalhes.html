@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</head>
+<body>
+	<div class="p-4" th:each="transacao : ${transacoes}">
+		<div class="row">
+		    <div class="col">
+		      <h5>Conta Origem</h5>
+		      <span th:text="${transacao.contaOrigem.banco.nome}"></span><br>
+		      Ag.: <span th:text="${transacao.contaOrigem.agencia}"></span><br>
+		      Conta: <span th:text="${transacao.contaOrigem.numero}"></span>-<span th:text="${transacao.contaOrigem.digito}"></span>
+		    </div>
+		    <div class="col">
+		      <h5>Conta Destino</h5>
+		      <span th:text="${transacao.contaDestino.banco.nome}"></span><br>
+		      Ag.: <span th:text="${transacao.contaDestino.agencia}"></span><br>
+		      Conta: <span th:text="${transacao.contaDestino.numero}"></span>-<span th:text="${transacao.contaDestino.digito}"></span>
+		    </div>
+		    <div class="col">
+		      <h5>Valor</h5>
+		      <span th:text="${#numbers.formatDecimal(transacao.valor, 0, 'POINT', 2, 'COMMA')}"></span>
+		    </div>
+		</div>
+	</div>
+</body>
+</html>
