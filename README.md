@@ -3,5 +3,5 @@
 </p>
 
 
-Sistema de análise de transações financeiras.<br><br>
+Sistema de análise de transações financeiras<br><br>
 #alurachallengebackend3
